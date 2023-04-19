@@ -18,8 +18,9 @@ public class BalanceChangeProducer {
         int i = 0;
         while (i < 20) {
             i++;
-            kafkaTemplate.send("balance_change", "message " + i);
-
+            String message = "message " + i;
+            kafkaTemplate.send("balance_change", message);
+            log.info("Message {} was sent", message);
             TimeUnit.SECONDS.sleep(5);
         }
     }

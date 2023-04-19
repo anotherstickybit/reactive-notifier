@@ -17,7 +17,7 @@ public class ConsumerApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        consumerService.consume();
+    public void run(String... args) {
+        consumerService.consume().subscribe();
     }
 }
